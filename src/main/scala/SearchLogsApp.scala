@@ -3,9 +3,9 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 
 object MyApp extends App {
-  // TODO collect these from args
-  val input = "wasbs://nbcs@chstone.blob.core.windows.net/*.json.gz"
-  val output = "wasbs://nbcs-stats@chstone.blob.core.windows.net/stats.json"
+
+  val input = args(0)
+  val output = args(1)
 
   val spark = SparkSession
     .builder
